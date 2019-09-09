@@ -1,9 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
+
+// Step 6 - The final stretch (context)
+import {CartContext} from '../Contexts/CartContext';
 
 // Components
 import Item from './ShoppingCartItem';
 
 const ShoppingCart = () => {
+	const {cart} = useContext(CartContext);
 	const getCartTotal = () => {
 		return cart.reduce((acc, value) => {
 			return acc + value.price;
